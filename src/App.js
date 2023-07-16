@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import Home from "./Components/Home";
+import { PuffLoader } from "react-spinners";
+import { Box } from "@mui/material";
 function App() {
+
+const[loading , setLoading] = useState(true)
+
+setTimeout(() => {
+  setLoading(false)
+}, 2000);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {
+      loading ? (
+        <Box sx={{background:"#d1e0db" , minHeight:"100vh" , display:"flex" , justifyContent:"center" , alignItems:"center"}}>
+         <PuffLoader color="#32d3e7" />
+        </Box> 
+      ) : (
+        <Home/>
+      )
+    }
+    </>
   );
 }
 
