@@ -8,7 +8,13 @@
 .hover {
   position: relative;
 }
-
+::-webkit-scrollbar{
+  width: 3px;
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #d1e0db;
+}
 .overlay {
   position: absolute;
   top: 0;
